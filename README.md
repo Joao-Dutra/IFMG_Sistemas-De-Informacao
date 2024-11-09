@@ -10,6 +10,10 @@ Enfatiza os fundamentos da lógica de programação e a construção de algoritm
 
 A POO introduz conceitos como classes, objetos, herança e polimorfismo, permitindo a modelagem de sistemas complexos com foco na reutilização e manutenção de código. A abstração e o encapsulamento são essenciais para a criação de soluções modulares.
 
+## Programação Orientada a Objetos 2 (POO2)
+
+A disciplina de POO2 revisita os conceitos fundamentais de POO 1, aprofundando-se nos padrões de design GRASP (General Responsibility Assignment Software Patterns) e GoF (Gang of Four). O foco é melhorar a qualidade do código e a arquitetura do software, aplicando esses padrões para resolver problemas comuns de design de forma mais eficiente e modular. A ênfase está na aplicação prática desses padrões, além da reflexão sobre a escolha adequada de responsabilidades e a criação de sistemas mais flexíveis e de fácil manutenção.
+
 ## Algoritmos e Estruturas de Dados (AEDS)
 
 Nesta matéria, são abordados os principais métodos de organização e manipulação de dados. Estruturas como listas, árvores binárias e pilhas são fundamentais, além de técnicas como busca e ordenação. Recursividade é um tema central para resolver problemas de forma eficiente.
