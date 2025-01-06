@@ -1,6 +1,6 @@
 # Graduação em Sistemas de Informação - IFMG 👨‍💻
 
-Este repositório foi criado para demonstrar meu progresso na graduação em Sistemas de Informação. Ele abrange os principais tópicos das disciplinas de Introdução à Programação, Programação Orientada a Objetos (POO), Algoritmos e Estruturas de Dados (AEDS), Arquitetura e Organização de Computadores (AOC) e Programação Web, com foco nos conceitos essenciais para o entendimento e prática dessas áreas.
+Este repositório foi criado para demonstrar meu progresso na graduação em Sistemas de Informação. Ele abrange os principais tópicos das disciplinas de Introdução à Programação, Programação Orientada a Objetos (POO), Algoritmos e Estruturas de Dados (AEDS), Arquitetura e Organização de Computadores (AOC), Programação Web e Sistemas Operacionais, com foco nos conceitos essenciais para o entendimento e prática dessas áreas.
 
 ## Introdução à Programação
 
@@ -25,3 +25,7 @@ Foca no funcionamento interno dos computadores, abordando desde a representaçã
 ## Programação Web
 
 Esta seção aborda os fundamentos do desenvolvimento web, incluindo HTML, CSS e JavaScript. Os conceitos de front-end e back-end são explorados, além de frameworks populares e a interação com bancos de dados. O objetivo é desenvolver aplicações web dinâmicas e responsivas, aplicando as melhores práticas de desenvolvimento.
+
+## Sistemas Operacionais
+
+A disciplina de Sistemas Operacionais explora os conceitos fundamentais que suportam o funcionamento dos computadores. Ela aborda threads e processos, explicando suas diferenças e como a multithread melhora a eficiência das aplicações. São estudados algoritmos de escalonamento de processos que determinam a alocação do tempo de CPU, além de gerência de memória, que inclui estratégias para uso eficiente da memória principal e memória virtual. Também são discutidos sistemas de arquivos, incluindo a organização e o gerenciamento de dados no disco, e técnicas de sincronização e concorrência, essenciais para evitar condições de corrida e deadlocks. Por fim, explora o gerenciamento de dispositivos de entrada e saída e como o sistema operacional comunica-se com o hardware de forma eficiente.
