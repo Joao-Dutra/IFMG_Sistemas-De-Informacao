@@ -97,9 +97,10 @@ def inicializa_escala(indisponibilidades, demandas, profissionais, preferencias)
                 # Preenche até o máximo, se ainda houver candidatos disponíveis
                 restantes = [p for p in candidatos if p not in selecionados]
                 max_extra = max_enf - len(selecionados)
-                extra = restantes[:max_extra]
-                for p in extra:
-                    escala[p][d] = (turno, setor)
+                if max_extra > 0 and restantes: # Garante que há vagas e candidatos
+                    selecionados_extra = random.sample(restantes, min(len(restantes), max_extra))
+                    for p in selecionados_extra:
+                        escala[p][d] = (turno, setor)
 
     for p in range(NUM_PROFISSIONAIS):
         for d in range(NUM_DIAS):
