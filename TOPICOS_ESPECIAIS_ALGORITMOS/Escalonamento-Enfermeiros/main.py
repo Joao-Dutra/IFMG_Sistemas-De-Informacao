@@ -61,27 +61,58 @@ def carregar_demandas():
     return demandas
 
 
-def inicializa_escala(indisponibilidades, demandas, profissionais):
+def inicializa_escala(indisponibilidades, demandas, profissionais, preferencias):
     escala = [[None for _ in range(NUM_DIAS)] for _ in range(NUM_PROFISSIONAIS)]
 
     for d in range(NUM_DIAS):
         for (setor, turno), necessidade in demandas.items():
             for tipo in [0, 1]:
                 min_enf, max_enf = necessidade[tipo]
-                # Número aleatório entre min e max (limitado pela quantidade de candidatos disponíveis)
+
+                # Candidatos válidos
                 candidatos = [p for p in range(NUM_PROFISSIONAIS)
-                              if profissionais[p] == tipo and d not in indisponibilidades[p] and escala[p][d] is None]
-                quantidade = random.randint(min_enf, max_enf) if max_enf >= min_enf else min_enf
-                quantidade = min(quantidade, len(candidatos))  # não ultrapassar o disponível
-                selecionados = random.sample(candidatos, quantidade)
+                              if profissionais[p] == tipo
+                              and d not in indisponibilidades[p]
+                              and escala[p][d] is None]
+
+                # Ordenar candidatos: preferem esse turno/setor > aleatório
+                candidatos_pref = [p for p in candidatos if (setor, turno) in preferencias[p]]
+                candidatos_nao_pref = [p for p in candidatos if (setor, turno) not in preferencias[p]]
+
+                selecionados = []
+
+                # Tenta preencher o mínimo com preferências
+                if len(candidatos_pref) >= min_enf:
+                    selecionados.extend(candidatos_pref[:min_enf])
+                else:
+                    # complementa com os demais
+                    selecionados.extend(candidatos_pref)
+                    falta = min_enf - len(candidatos_pref)
+                    selecionados.extend(candidatos_nao_pref[:falta])
+
+                # Preenche na escala
                 for p in selecionados:
                     escala[p][d] = (turno, setor)
 
-    # Preencher as vagas restantes aleatoriamente
+                # Preenche até o máximo, se ainda houver candidatos disponíveis
+                restantes = [p for p in candidatos if p not in selecionados]
+                max_extra = max_enf - len(selecionados)
+                extra = restantes[:max_extra]
+                for p in extra:
+                    escala[p][d] = (turno, setor)
+
     for p in range(NUM_PROFISSIONAIS):
         for d in range(NUM_DIAS):
             if escala[p][d] is None and d not in indisponibilidades[p]:
-                escala[p][d] = (random.choice(TURNOS), random.choice(SETORES))
+                # Tenta usar preferências primeiro
+                prefs = list(preferencias[p])
+                random.shuffle(prefs)
+                if prefs:
+                    turno, setor = prefs[0]
+                else:
+                    turno = random.choice(TURNOS)
+                    setor = random.choice(SETORES)
+                escala[p][d] = (turno, setor)
 
     return escala
 
