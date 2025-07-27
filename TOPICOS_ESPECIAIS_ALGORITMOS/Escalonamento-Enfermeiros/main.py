@@ -235,7 +235,7 @@ indisponibilidades = carregar_indisponibilidades()
 preferencias = carregar_preferencias()
 demandas = carregar_demandas()
 
-escala_inicial = inicializa_escala(indisponibilidades, demandas, profissionais)
+escala_inicial = inicializa_escala(indisponibilidades, demandas, profissionais, preferencias)
 melhor_escala, historico_fo = busca_tabu(escala_inicial, demandas, preferencias, profissionais)
 
 plt.plot(historico_fo)
