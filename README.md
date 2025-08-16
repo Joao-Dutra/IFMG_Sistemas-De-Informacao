@@ -29,3 +29,7 @@ Esta seção aborda os fundamentos do desenvolvimento web, incluindo HTML, CSS e
 ## Sistemas Operacionais
 
 A disciplina de Sistemas Operacionais explora os conceitos fundamentais que suportam o funcionamento dos computadores. Ela aborda threads e processos, explicando suas diferenças e como a multithread melhora a eficiência das aplicações. São estudados algoritmos de escalonamento de processos que determinam a alocação do tempo de CPU, além de gerência de memória, que inclui estratégias para uso eficiente da memória principal e memória virtual. Também são discutidos sistemas de arquivos, incluindo a organização e o gerenciamento de dados no disco, e técnicas de sincronização e concorrência, essenciais para evitar condições de corrida e deadlocks. Por fim, explora o gerenciamento de dispositivos de entrada e saída e como o sistema operacional comunica-se com o hardware de forma eficiente.
+
+## Tópicos Especiais em Algoritmos
+
+A disciplina explora conceitos de meta-heurísticas, otimização e técnicas avançadas de resolução de problemas. São abordados métodos para encontrar soluções aproximadas para problemas complexos, onde abordagens tradicionais podem ser inviáveis. O foco está em estratégias como busca tabu, simulated annealing, algoritmos evolutivos e outras técnicas inspiradas na natureza, além de aplicações práticas dessas abordagens em diferentes contextos computacionais.
